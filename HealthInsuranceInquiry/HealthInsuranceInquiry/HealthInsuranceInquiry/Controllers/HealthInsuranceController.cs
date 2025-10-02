@@ -25,13 +25,23 @@ namespace HealthInsuranceInquiry.Controllers
         /// <summary>
         /// ثبت درخواست
         /// </summary>
+        /// <remarks>
+        /// ## پوشش جراحی :
+        /// این پوشش حداقل 5000 و حداکثر 500000000 سرمایه میتواند داشته باشد.
+        /// ## پوشش فوت دندان پزشکی :
+        /// این پوشش حداقل 4000 و حداکثر 400000000 سرمایه میتواند داشته باشد.
+        /// ## پوشش بستری :
+        /// این پوشش حداقل 2000 و حداکثر 200000000 سرمایه میتواند داشته باشد.
+        /// ##
+        /// </remarks>
         /// <param name="cancellationToken"></param>
+        /// <param name="request"></param>
         /// <returns></returns>
         [HttpPost("CreateRequest")]
         [ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]
-        public async Task<IActionResult> Add(CancellationToken cancellationToken)
+        public async Task<IActionResult> Add(CreateInsuranceRequest request , CancellationToken cancellationToken)
         {
-            var result = await _sender.Send(new CreateInsuranceRequest(), cancellationToken);
+            var result = await _sender.Send(request, cancellationToken);
             return Ok(result);
         }
 

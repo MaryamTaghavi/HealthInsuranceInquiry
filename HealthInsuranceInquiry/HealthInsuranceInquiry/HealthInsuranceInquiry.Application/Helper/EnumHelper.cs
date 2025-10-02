@@ -11,4 +11,17 @@ public static class EnumHelper
         var attribute = field.GetCustomAttribute<DescriptionAttribute>();
         return attribute != null ? attribute.Description : value.ToString();
     }
+
+    public static TEnum GetEnumFromId<TEnum>(int id) where TEnum : Enum
+    {
+        foreach (var value in Enum.GetValues(typeof(TEnum)))
+        {
+            if ((int)value == id)
+            {
+                return (TEnum)value;
+            }
+        }
+
+        throw new ArgumentException($"No matching value found in {typeof(TEnum).Name} for id {id}.");
+    }
 }

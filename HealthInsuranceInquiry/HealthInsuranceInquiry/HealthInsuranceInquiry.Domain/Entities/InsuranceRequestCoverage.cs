@@ -9,6 +9,7 @@ public class InsuranceRequestCoverage
     public int Id { get; set; }
     public int InsuranceRequestId { get; set; }
     public CoverageEnum Coverage { get; set; }
+    public decimal Price { get; set; }
     public DateTime CreatedDate { get; set; }
 
     #region Navigation Property
