@@ -1,4 +1,6 @@
 using HealthInsuranceInquiry.Application.Features.CreateInsuranceRequest;
+using HealthInsuranceInquiry.Application.Interfaces;
+using HealthInsuranceInquiry.Application.Services;
 using HealthInsuranceInquiry.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
@@ -7,6 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseInMemoryDatabase("MyTestDb"));
+
+builder.Services.AddScoped<IHealthInsuranceInquiryService, HealthInsuranceInquiryService>();
 
 builder.Services.AddSwaggerGen(c =>
 {
