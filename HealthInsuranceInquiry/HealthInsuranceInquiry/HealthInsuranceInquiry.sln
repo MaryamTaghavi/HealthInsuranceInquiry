@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthInsuranceInquiry", "HealthInsuranceInquiry\HealthInsuranceInquiry.csproj", "{BAE34701-FFC8-4355-BF6A-1CC8044CBE99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthInsuranceInquiry", "HealthInsuranceInquiry\HealthInsuranceInquiry.csproj", "{BAE34701-FFC8-4355-BF6A-1CC8044CBE99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthInsuranceInquiry.Application", "HealthInsuranceInquiry.Application\HealthInsuranceInquiry.Application.csproj", "{BF965BF3-8990-4CFC-A15F-520DEEA0CA71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthInsuranceInquiry.Application", "HealthInsuranceInquiry.Application\HealthInsuranceInquiry.Application.csproj", "{BF965BF3-8990-4CFC-A15F-520DEEA0CA71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthInsuranceInquiry.Domain", "HealthInsuranceInquiry.Domain\HealthInsuranceInquiry.Domain.csproj", "{E035D539-7BE0-48D7-ADB4-52EE28D71DA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthInsuranceInquiry.Domain", "HealthInsuranceInquiry.Domain\HealthInsuranceInquiry.Domain.csproj", "{E035D539-7BE0-48D7-ADB4-52EE28D71DA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthInsuranceInquiry.Infrustructure", "HealthInsuranceInquiry.Infrustructure\HealthInsuranceInquiry.Infrustructure.csproj", "{508A98E5-B247-420C-9AC6-D56B6D7578FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthInsuranceInquiry.Infrastructure", "HealthInsuranceInquiry.Infrustructure\HealthInsuranceInquiry.Infrastructure.csproj", "{508A98E5-B247-420C-9AC6-D56B6D7578FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
