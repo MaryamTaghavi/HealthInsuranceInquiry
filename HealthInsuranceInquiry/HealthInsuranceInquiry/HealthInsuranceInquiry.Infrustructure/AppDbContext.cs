@@ -15,7 +15,8 @@ public class AppDbContext : DbContext
 
     #region DbSets
 
-     public DbSet<InsuranceRequest> InsuranceRequest => Set<InsuranceRequest>();
-
+    public DbSet<InsuranceRequest> InsuranceRequest => Set<InsuranceRequest>();
+    public DbSet<InsuranceRequestCoverage> InsuranceRequestCoverage => Set<InsuranceRequestCoverage>();
+    
     #endregion
 }
