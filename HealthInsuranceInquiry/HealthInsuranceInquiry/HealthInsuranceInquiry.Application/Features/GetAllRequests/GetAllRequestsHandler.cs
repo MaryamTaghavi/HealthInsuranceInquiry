@@ -8,10 +8,8 @@ public class GetAllRequestsHandler : IRequestHandler<GetAllRequests, List<GetAll
 {
     private readonly IHealthInsuranceInquiryService _healthInsuranceInquiryService;
 
-    public GetAllRequestsHandler(IHealthInsuranceInquiryService healthInsuranceInquiryService)
-    {
+    public GetAllRequestsHandler(IHealthInsuranceInquiryService healthInsuranceInquiryService) =>
         _healthInsuranceInquiryService = healthInsuranceInquiryService;
-    }
 
     public async Task<List<GetAllRequestViewModel>> Handle(GetAllRequests query, CancellationToken cancellationToken)
     {

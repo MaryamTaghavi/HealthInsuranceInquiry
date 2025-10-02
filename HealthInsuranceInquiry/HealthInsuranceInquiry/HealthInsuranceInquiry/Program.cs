@@ -5,6 +5,8 @@ using HealthInsuranceInquiry.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 using FluentValidation;
+using MediatR;
+using HealthInsuranceInquiry.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +21,8 @@ builder.Services.AddSwaggerGen(c =>
     c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
 });
 
+builder.Services.AddValidatorsFromAssemblyContaining<CreateInsuranceRequestValidator>();
+builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviorPipeline<,>));
 
 builder.Services.AddControllers();
 builder.Services.AddMediatR(cfg =>
@@ -34,7 +38,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// Configure the HTTP request pipeline.
+app.UseMiddleware<ValidationExceptionMiddleware>();
 
 app.UseAuthorization();
 
