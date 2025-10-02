@@ -17,7 +17,7 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddControllers();
 builder.Services.AddMediatR(cfg =>
 {
-    cfg.RegisterServicesFromAssembly(typeof(CreateInsuranceRequestCommand).Assembly);
+    cfg.RegisterServicesFromAssembly(typeof(CreateInsuranceRequest).Assembly);
 });
 
 var app = builder.Build();

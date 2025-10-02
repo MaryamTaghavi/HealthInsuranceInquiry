@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FluentValidation;
 
-namespace HealthInsuranceInquiry.Application.Features.CreateInsuranceRequest
+namespace HealthInsuranceInquiry.Application.Features.CreateInsuranceRequest;
+
+public class CreateInsuranceRequestValidator : AbstractValidator<CreateInsuranceRequest>
 {
-    internal class CreateInsuranceRequestValidator
+    public CreateInsuranceRequestValidator()
     {
+        
     }
 }

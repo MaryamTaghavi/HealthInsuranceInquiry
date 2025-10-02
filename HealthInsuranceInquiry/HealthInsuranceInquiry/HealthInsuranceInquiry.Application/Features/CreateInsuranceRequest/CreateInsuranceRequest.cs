@@ -2,4 +2,4 @@
 
 namespace HealthInsuranceInquiry.Application.Features.CreateInsuranceRequest;
 
-public record CreateInsuranceRequestCommand() : IRequest<bool>;
+public record CreateInsuranceRequest() : IRequest<bool>;
