@@ -6,6 +6,6 @@ public record CreateInsuranceRequest
 (
     string Name,
     List<Coverage> RequestCoverages
-) : IRequest<bool>;
+) : IRequest<decimal>;
 
 public record Coverage(int CoverageId, decimal Amount);

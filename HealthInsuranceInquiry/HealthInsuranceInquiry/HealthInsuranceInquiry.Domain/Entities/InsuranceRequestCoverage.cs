@@ -13,7 +13,7 @@ public class InsuranceRequestCoverage
     public DateTime CreatedDate { get; set; }
 
     #region Navigation Property
-    
+
     public InsuranceRequest InsuranceRequest { get; set; }
 
     #endregion

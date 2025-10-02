@@ -13,17 +13,18 @@ public class HealthInsuranceInquiryService : IHealthInsuranceInquiryService
 
     public HealthInsuranceInquiryService(AppDbContext context) => _context = context;
 
-    public async Task<bool> AddRequest(CreateInsuranceRequest request, CancellationToken cancellationToken)
+    public async Task<decimal> AddRequest(CreateInsuranceRequest request, CancellationToken cancellationToken)
     {
         try
         {
-            _context.Add(request.ToCreateInsuranceRequest());
+            var insuranceRequest = request.ToCreateInsuranceRequest();
+            _context.InsuranceRequest.Add(insuranceRequest);
             await _context.SaveChangesAsync(cancellationToken);
-            return true;
+            return insuranceRequest.PureInsurance;
         }
         catch
         {
-            return false;
+            return 0;
         }
     }
 

@@ -3,7 +3,6 @@ using HealthInsuranceInquiry.Application.Helper;
 using HealthInsuranceInquiry.Application.ViewModels;
 using HealthInsuranceInquiry.Domain.Entities;
 using HealthInsuranceInquiry.Domain.Enums;
-using MediatR;
 
 namespace HealthInsuranceInquiry.Application.Mappers;
 
@@ -13,7 +12,8 @@ public static class HealthInsuranceMapper
         new()
         {
             InsuranceRequestCoverages = request.RequestCoverages.ToCreateRequestCoverage().ToList(),
-            Name = request.Name
+            Name = request.Name,
+            PureInsurance = request.RequestCoverages.Sum(r => r.CalculatePremium())
         };
 
     public static IEnumerable<InsuranceRequestCoverage> ToCreateRequestCoverage(this List<Coverage> coverages)

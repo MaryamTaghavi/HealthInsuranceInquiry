@@ -6,5 +6,5 @@ namespace HealthInsuranceInquiry.Application.Interfaces;
 public interface IHealthInsuranceInquiryService
 {
     Task<List<GetAllRequestViewModel>> GetAllRequests(CancellationToken cancellationToken);
-    Task<bool> AddRequest(CreateInsuranceRequest request , CancellationToken cancellationToken);
+    Task<decimal> AddRequest(CreateInsuranceRequest request , CancellationToken cancellationToken);
 }

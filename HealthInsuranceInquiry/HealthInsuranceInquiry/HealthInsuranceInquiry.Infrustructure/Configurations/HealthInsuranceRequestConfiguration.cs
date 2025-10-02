@@ -10,6 +10,7 @@ public class HealthInsuranceRequestConfiguration : IEntityTypeConfiguration<Insu
     {
 
         builder.Property(s => s.Id);
+        builder.Property(s => s.PureInsurance).IsRequired();
         builder.Property(s => s.Name).IsRequired().HasMaxLength(150);
     }
 }
