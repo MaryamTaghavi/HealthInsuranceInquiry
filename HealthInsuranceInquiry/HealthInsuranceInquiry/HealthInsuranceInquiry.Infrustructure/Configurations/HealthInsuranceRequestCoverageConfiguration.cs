@@ -10,6 +10,9 @@ public class HealthInsuranceRequestCoverageConfiguration : IEntityTypeConfigurat
     {
 
         builder.Property(s => s.Id);
+        builder.Property(s => s.Price).IsRequired();
+        builder.Property(s => s.Coverage).IsRequired();
+        builder.Property(s => s.CreatedDate).IsRequired();
         builder
             .HasOne(a => a.InsuranceRequest)
             .WithMany(a => a.InsuranceRequestCoverages)

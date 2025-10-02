@@ -7,7 +7,6 @@ public class InsuranceRequest
     [Key]
     public int Id { get; set; }
     public string Name { get; set; } = null!;
-    public Decimal Price { get; set; }
 
     #region Navigation Property
 

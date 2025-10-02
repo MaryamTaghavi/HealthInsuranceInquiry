@@ -11,6 +11,5 @@ public class HealthInsuranceRequestConfiguration : IEntityTypeConfiguration<Insu
 
         builder.Property(s => s.Id);
         builder.Property(s => s.Name).IsRequired().HasMaxLength(150);
-        builder.Property(s => s.Price).IsRequired();
     }
 }

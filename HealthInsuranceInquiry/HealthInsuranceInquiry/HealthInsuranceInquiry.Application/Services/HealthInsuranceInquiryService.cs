@@ -30,7 +30,8 @@ public class HealthInsuranceInquiryService : IHealthInsuranceInquiryService
     public async Task<List<GetAllRequestViewModel>> GetAllRequests(CancellationToken cancellationToken)
     {
         var result = await _context.InsuranceRequest.AsNoTracking()
-            .Select( r => new GetAllRequestViewModel()).ToListAsync(cancellationToken);
+            .Include( r => r.InsuranceRequestCoverages)
+            .Select( r => r.ToGetRequestCoverage()).ToListAsync(cancellationToken);
 
         return result;
     }
