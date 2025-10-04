@@ -12,7 +12,7 @@ public static class CoverageHelper
             (int)CoverageEnum.Surgical => (5000m, 500_000_000m),
             (int)CoverageEnum.Dental => (4000m, 400_000_000m),
             (int)CoverageEnum.Inpatient => (2000m, 200_000_000m),
-            _ => throw new ArgumentOutOfRangeException(nameof(coverage), "Unknown coverage type")
+            _ => throw new ArgumentOutOfRangeException(nameof(coverage), "پوشش نامعتبر است!")
         };
     }
 
@@ -23,7 +23,7 @@ public static class CoverageHelper
             (int)CoverageEnum.Surgical => coverage.Amount * 0.00520m,
             (int)CoverageEnum.Dental => coverage.Amount * 0.00420m,
             (int)CoverageEnum.Inpatient => coverage.Amount * 0.0050m,
-            _ => throw new ArgumentOutOfRangeException(nameof(coverage.CoverageId), "پوشش نامعتبر است.")
+            _ => throw new ArgumentOutOfRangeException(nameof(coverage.CoverageId), "پوشش نامعتبر است!")
         };
     }
 }

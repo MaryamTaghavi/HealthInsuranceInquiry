@@ -17,13 +17,36 @@ public class ValidationExceptionMiddleware
         }
         catch (FluentValidation.ValidationException ex)
         {
-            context.Response.StatusCode = StatusCodes.Status400BadRequest;
-            context.Response.ContentType = "application/json";
-
-            var errors = ex.Errors.Select(e => e.ErrorMessage).ToArray();
-            var result = new { Errors = errors };
-
-            await context.Response.WriteAsJsonAsync(result);
+            await HandleValidationExceptionAsync(context, ex);
         }
+        catch (ArgumentOutOfRangeException ex)
+        {
+            await HandleCustomExceptionAsync(context, ex.Message);
+        }
+        catch
+        {
+            await HandleCustomExceptionAsync(context, "خطای غیرمنتظره‌ای رخ داده است.");
+        }
+    }
+
+    private static async Task HandleValidationExceptionAsync(HttpContext context, FluentValidation.ValidationException ex)
+    {
+        context.Response.StatusCode = StatusCodes.Status400BadRequest;
+        context.Response.ContentType = "application/json";
+
+        var errors = ex.Errors.Select(e => e.ErrorMessage).ToArray();
+        var result = new { Errors = errors };
+
+        await context.Response.WriteAsJsonAsync(result);
+    }
+
+    private static async Task HandleCustomExceptionAsync(HttpContext context, string message)
+    {
+        context.Response.StatusCode = StatusCodes.Status400BadRequest;
+        context.Response.ContentType = "application/json";
+
+        var result = new { Errors = new[] { message } };
+
+        await context.Response.WriteAsJsonAsync(result);
     }
 }
