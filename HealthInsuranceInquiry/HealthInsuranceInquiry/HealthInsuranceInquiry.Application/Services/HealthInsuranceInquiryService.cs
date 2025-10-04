@@ -2,7 +2,7 @@
 using HealthInsuranceInquiry.Application.Interfaces;
 using HealthInsuranceInquiry.Application.Mappers;
 using HealthInsuranceInquiry.Application.ViewModels;
-using HealthInsuranceInquiry.Infrastructure;
+using HealthInsuranceInquiry.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 
 namespace HealthInsuranceInquiry.Application.Services;

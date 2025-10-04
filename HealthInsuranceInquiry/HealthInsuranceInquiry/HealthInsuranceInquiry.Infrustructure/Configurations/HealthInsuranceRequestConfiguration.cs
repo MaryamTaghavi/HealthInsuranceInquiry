@@ -8,7 +8,6 @@ public class HealthInsuranceRequestConfiguration : IEntityTypeConfiguration<Insu
 {
     public void Configure(EntityTypeBuilder<InsuranceRequest> builder)
     {
-
         builder.Property(s => s.Id);
         builder.Property(s => s.PureInsurance).IsRequired();
         builder.Property(s => s.Name).IsRequired().HasMaxLength(150);

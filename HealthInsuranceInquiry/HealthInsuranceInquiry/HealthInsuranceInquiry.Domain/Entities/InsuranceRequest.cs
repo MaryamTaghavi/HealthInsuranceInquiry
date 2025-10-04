@@ -5,7 +5,7 @@ namespace HealthInsuranceInquiry.Domain.Entities;
 public class InsuranceRequest
 {
     [Key]
-    public int Id { get; set; }
+    public int Id { get; init; }
     public string Name { get; set; } = null!;
     public decimal PureInsurance { get; set; }
 

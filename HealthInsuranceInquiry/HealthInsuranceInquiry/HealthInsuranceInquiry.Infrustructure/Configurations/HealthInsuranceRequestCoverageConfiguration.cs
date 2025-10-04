@@ -8,14 +8,12 @@ public class HealthInsuranceRequestCoverageConfiguration : IEntityTypeConfigurat
 {
     public void Configure(EntityTypeBuilder<InsuranceRequestCoverage> builder)
     {
-
         builder.Property(s => s.Id);
         builder.Property(s => s.Price).IsRequired();
         builder.Property(s => s.Coverage).IsRequired();
         builder.Property(s => s.CreatedDate).IsRequired();
-        builder
-            .HasOne(a => a.InsuranceRequest)
-            .WithMany(a => a.InsuranceRequestCoverages)
-            .HasForeignKey(a => a.InsuranceRequestId);
+        builder.HasOne(a => a.InsuranceRequest)
+               .WithMany(a => a.InsuranceRequestCoverages)
+               .HasForeignKey(a => a.InsuranceRequestId);
     }
 }

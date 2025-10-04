@@ -13,10 +13,7 @@ public class ValidationBehaviorPipeline<TRequest, TResponse> : IPipelineBehavior
 {
     private readonly IEnumerable<IValidator<TRequest>> _validators;
 
-    public ValidationBehaviorPipeline(IEnumerable<IValidator<TRequest>> validators)
-    {
-        _validators = validators;
-    }
+    public ValidationBehaviorPipeline(IEnumerable<IValidator<TRequest>> validators) =>  _validators = validators;
 
     public async Task<TResponse> Handle(
         TRequest request,

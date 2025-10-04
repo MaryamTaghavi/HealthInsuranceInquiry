@@ -1,12 +1,12 @@
 using HealthInsuranceInquiry.Application.Features.CreateInsuranceRequest;
 using HealthInsuranceInquiry.Application.Interfaces;
 using HealthInsuranceInquiry.Application.Services;
-using HealthInsuranceInquiry.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 using FluentValidation;
 using MediatR;
 using HealthInsuranceInquiry.Extensions;
+using HealthInsuranceInquiry.Infrastructure.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 
